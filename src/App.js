@@ -1,23 +1,19 @@
 import './App.css';
+import React, { useState } from 'react';
+import FunctionalApp from './FunctionalApp';
+import ClassApp from './ClassApp';
+
 
 function App() {
+  const [level,setLevel] = useState(1);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App App-header'>
+      <button onClick={()=> setLevel(level+1)}>Add Level</button>
+      <FunctionalApp level={level}/>
+      <ClassApp/>
     </div>
-  );
+  )
 }
 
 export default App;
